@@ -1,0 +1,372 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #00aaff, #0077ff);
+  color: #fff;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.sidebar {
+  width: 90px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+}
+
+.sidebar.right {
+  border-radius: 20px 0 0 20px;
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon span {
+  position: absolute;
+  font-size: 10px;
+  bottom: -15px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+.circle.blue { background: #a2d2ff; }
+.circle.green { background: #caffbf; }
+.circle.purple { background: #e0aaff; }
+.circle.yellow { background: #fdffb6; }
+.circle.red { background: #ffadad; }
+.circle.gray { background: #d3d3d3; }
+.circle.white { background: #ffffff; }
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.status-card {
+  display: flex;
+  gap: 40px;
+  background: #ffffff33;
+  padding: 20px 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.status-card p {
+  margin: 0;
+  font-size: 12px;
+  color: #eee;
+}
+
+.status-card h2 {
+  margin: 0;
+  font-size: 24px;
+  color: white;
+}
+
+.xp-bar {
+  position: relative;
+  background: #ccc;
+  width: 80px;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.xp-bar .fill {
+  background: limegreen;
+  height: 100%;
+  transition: width 0.6s ease-in-out;
+  box-shadow: 0 0 8px 2px limegreen;
+}
+
+.xp-bar span {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+}
+
+.chat-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.5s ease;
+}
+
+.sonic-avatar {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  animation: bob 2s infinite;
+}
+
+.sonic-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.chat-bubble {
+  background: white;
+  color: #333;
+  padding: 15px 20px;
+  border-radius: 20px;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.chat-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
+.mic-box {
+  background: #ffffff33;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mic-btn {
+  width: 70px;
+  height: 70px;
+  background: #4d90fe;
+  border-radius: 50%;
+  font-size: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.mic-btn:hover {
+  transform: scale(1.1);
+}
+
+.mic-btn.listening {
+  animation: pulse 1.5s infinite;
+}
+
+#chat-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#chat-form input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+#chat-form button {
+  background: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#chat-form button:hover {
+  transform: scale(1.05);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(77, 144, 254, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(77, 144, 254, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(77, 144, 254, 0);
+  }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar.left, .sidebar.right {
+    display: none;
+  }
+
+  .main {
+    padding-bottom: 120px;
+  }
+
+  .chat-bubble {
+    max-width: 90%;
+    font-size: 14px;
+  }
+
+  .mic-box {
+    position: fixed;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  #chat-form {
+    flex-direction: column;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+
+  #chat-form input,
+  #chat-form button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+/* Sonic display image */
+.sonic-display {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sonic-display img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 4px solid white;
+}
+
+#evolution-label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: yellow;
+  font-size: 14px;
+}
+
+/* Ring animation */
+#ring-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ring {
+  width: 32px;
+  height: 32px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/e/e1/Sonic_ring_icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  animation: float 6s linear infinite;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50vh) rotate(360deg);
+    opacity: 1;
+  }
+}

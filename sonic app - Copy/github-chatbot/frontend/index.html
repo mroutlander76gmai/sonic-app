@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonic Voice Bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ring container -->
+  <div id="ring-container"></div>
+
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <div class="sidebar left">
+      <div class="section-title">🏆 Badges</div>
+      <div class="icon-group">
+        <div class="icon circle blue">⚡</div>
+        <div class="icon circle green">🌟</div>
+        <div class="icon circle purple">💎</div>
+        <div class="icon circle yellow">🏅</div>
+        <div class="icon circle gray">🔒</div>
+      </div>
+    </div>
+
+    <!-- Main UI -->
+    <div class="main">
+      <!-- Sonic avatar display -->
+      <div class="sonic-display">
+        <img id="sonic-avatar" src="sonic.jpg" alt="Sonic Avatar" />
+        <p id="evolution-label">Normal Sonic</p>
+      </div>
+
+      <!-- Stats -->
+      <div class="status-card">
+        <div>
+          <p>LEVEL</p>
+          <h2>5</h2>
+        </div>
+        <div>
+          <p>RINGS</p>
+          <h2 id="ring-count">0</h2>
+        </div>
+        <div>
+          <p>XP</p>
+          <div class="xp-bar">
+            <div class="fill" style="width: 75%"></div>
+            <span>75%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat section -->
+      <div class="chat-container">
+        <div class="sonic-avatar">
+          <img src="sonic.jpg" alt="Sonic" />
+        </div>
+        <div class="chat-bubble">
+          Hey there! I'm Sonic! Ready to go fast? What can I help you with today?
+        </div>
+      </div>
+
+      <!-- Mic -->
+      <div class="mic-box" id="voice-mode">
+        <div id="voice-btn" class="mic-btn">🎤</div>
+        <p>Press and hold to talk</p>
+      </div>
+
+      <!-- Chat input -->
+      <form id="chat-form">
+        <input type="text" id="user-input" />
+        <button type="submit">Send</button>
+      </form>
+
+      <button id="toggle-mode-btn" class="toggle-btn" title="Switch to Voice Mode">🗣️</button>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar right">
+      <div class="section-title">⚡ Quick</div>
+      <div class="icon-group">
+        <div class="icon circle white">🎵<span>Music</span></div>
+        <div class="icon circle green">🏃‍♂️<span>Workout</span></div>
+        <div class="icon circle purple">🎮<span>Games</span></div>
+        <div class="icon circle red">📰<span>News</span></div>
+        <div class="icon circle yellow">🤣<span>Jokes</span></div>
+        <div class="icon circle gray">⚙️<span>Settings</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
